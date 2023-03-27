@@ -6,10 +6,10 @@ import torch
 import transformers
 from peft import PeftModel
 
-assert (
-    "LlamaTokenizer" in transformers._import_structure["models.llama"]
-), "LLaMA is now in HuggingFace's main branch.\nPlease reinstall it: pip uninstall transformers && pip install git+https://github.com/huggingface/transformers.git"  # noqa: E501
-from transformers import GenerationConfig, LlamaForCausalLM, LlamaTokenizer
+# assert (
+#     "LlamaTokenizer" in transformers._import_structure["models.llama"]
+# ), "LLaMA is now in HuggingFace's main branch.\nPlease reinstall it: pip uninstall transformers && pip install git+https://github.com/huggingface/transformers.git"  # noqa: E501
+# from transformers import GenerationConfig, LlamaForCausalLM, LlamaTokenizer
 
 if torch.cuda.is_available():
     device = "cuda"
