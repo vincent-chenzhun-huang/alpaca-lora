@@ -173,7 +173,7 @@ def generate_prompt(instruction, input=None):
 
 Emotion: {instruction}
 
-[Start of generated poem here...]"""
+### Response:"""
 
 
 if __name__ == "__main__":
