@@ -120,22 +120,22 @@ def main(
                 label="Instruction",
                 placeholder="Tell me about alpacas.",
             ),
-            # gr.components.Textbox(lines=2, label="Input", placeholder="none"),
-            # gr.components.Slider(
-            #     minimum=0, maximum=1, value=0.1, label="Temperature"
-            # ),
-            # gr.components.Slider(
-            #     minimum=0, maximum=1, value=0.75, label="Top p"
-            # ),
-            # gr.components.Slider(
-            #     minimum=0, maximum=100, step=1, value=40, label="Top k"
-            # ),
-            # gr.components.Slider(
-            #     minimum=1, maximum=4, step=1, value=4, label="Beams"
-            # ),
-            # gr.components.Slider(
-            #     minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
-            # ),                                                                                      
+            gr.components.Textbox(lines=2, label="Input", placeholder="none"),
+            gr.components.Slider(
+                minimum=0, maximum=1, value=0.1, label="Temperature"
+            ),
+            gr.components.Slider(
+                minimum=0, maximum=1, value=0.75, label="Top p"
+            ),
+            gr.components.Slider(
+                minimum=0, maximum=100, step=1, value=40, label="Top k"
+            ),
+            gr.components.Slider(
+                minimum=1, maximum=4, step=1, value=4, label="Beams"
+            ),
+            gr.components.Slider(
+                minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
+            ),                                                                                      
         ],
         outputs=[
             gr.inputs.Textbox(
@@ -168,25 +168,12 @@ def main(
 
 
 def generate_prompt(instruction, input=None):
-    if input:
-        return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.  # noqa: E501
+    
+    return f"""Write a poem that captures the essence of the emotion specified below. Let the words and imagery reflect the depth and nuances of this emotion.
 
-### Instruction:
-{instruction}
+Emotion: {instruction}
 
-### Input:
-{input}
-
-### Response:
-"""
-    else:
-        return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.  # noqa: E501
-
-### Instruction:
-{instruction}
-
-### Response:
-"""
+[Start of generated poem here...]"""
 
 
 if __name__ == "__main__":
