@@ -135,7 +135,7 @@ def main(
             ),
             gr.components.Slider(
                 minimum=1, maximum=2000, step=1, value=128, label="Max tokens"
-            ),
+            ),                                                                                      
         ],
         outputs=[
             gr.inputs.Textbox(
@@ -143,8 +143,8 @@ def main(
                 label="Output",
             )
         ],
-        title="🦙🌲 Alpaca-LoRA",
-        description="Alpaca-LoRA is a 7B-parameter LLaMA model finetuned to follow instructions. It is trained on the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) dataset and makes use of the Huggingface LLaMA implementation. For more information, please visit [the project's website](https://github.com/tloen/alpaca-lora).",  # noqa: E501
+        title="Poem Generator",
+        description="Tell the system to generate a poem with the emotion you like!",  # noqa: E501
     ).launch()
     # Old testing code follows.
 
