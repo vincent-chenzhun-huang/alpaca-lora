@@ -168,12 +168,25 @@ def main(
 
 
 def generate_prompt(instruction, input=None):
-    
-    return f"""Write a poem that captures the essence of the emotion specified below. Let the words and imagery reflect the depth and nuances of this emotion.
+    if input:
+        return f"""Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.  # noqa: E501
 
-Emotion: {instruction}
+### Instruction:
+{instruction}
 
-### Response:"""
+### Input:
+{input}
+
+### Response:
+"""
+    else:
+        return f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.  # noqa: E501
+
+### Instruction:
+{instruction}
+
+### Response:
+"""
 
 
 if __name__ == "__main__":
