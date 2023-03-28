@@ -145,7 +145,7 @@ def main(
         ],
         title="Poem Generator",
         description="Tell the system to generate a poem with the emotion you like!",  # noqa: E501
-    ).launch()
+    ).launch(share=True)
     # Old testing code follows.
 
     """
